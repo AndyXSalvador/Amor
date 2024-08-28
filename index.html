@@ -1,0 +1,323 @@
+<html><head><base href="base href/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mi Amor Por Ti</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --text-color: #333;
+    --bg-color: #f7f7f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.heart-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='rgba(255,255,255,0.1)' d='M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    animation: heartBeat 60s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(180deg); }
+    100% { transform: scale(1) rotate(360deg); }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.love-message {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.love-message::before {
+    content: '"';
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+}
+
+.love-message p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.floating-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff6b6b' d='M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z'/%3E%3C/svg%3E") no-repeat center center;
+    background-size: contain;
+    opacity: 0;
+    animation: floatHeart 10s ease-in infinite;
+}
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) rotate(0deg) scale(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(720deg) scale(1); opacity: 0; }
+}
+
+.love-counter {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.love-counter h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.love-counter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.love-counter-item {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.love-counter-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.love-counter-item p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .love-message {
+        padding: 1.5rem;
+    }
+    
+    .love-message p {
+        font-size: 1.5rem;
+    }
+    
+    .love-counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style></head><body>
+<div class="floating-hearts" id="floating-hearts"></div>
+
+<header>
+    <div class="heart-bg"></div>
+    <h1>Mi Amor Por Ti</h1>
+</header>
+
+<div class="container">
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://party.websim.ai/a/7c08d9d8-9c5c-4c15-835f-6111cd6b0095" alt="amor1" width="300" height="300">
+        </div>
+        <div class="gallery-item">
+            <img src="https://party.websim.ai/a/826e378b-de2b-4e2f-9f11-20e8e35a9428" alt="amor2" width="300" height="300">
+        </div>
+        <div class="gallery-item">
+            <img src="https://party.websim.ai/a/202a17c0-f9f7-45a4-b5ec-daf5d0016bea" alt="amor3" width="300" height="300">
+        </div>
+    </div>
+
+    <div class="love-counter">
+        <h2>Tiempo Juntos</h2>
+        <div class="love-counter-grid">
+            <div class="love-counter-item">
+                <span id="years">0</span>
+                <p>Años</p>
+            </div>
+            <div class="love-counter-item">
+                <span id="months">0</span>
+                <p>Meses</p>
+            </div>
+            <div class="love-counter-item">
+                <span id="days">0</span>
+                <p>Días</p>
+            </div>
+            <div class="love-counter-item">
+                <span id="hours">0</span>
+                <p>Horas</p>
+            </div>
+            <div class="love-counter-item">
+                <span id="minutes">0</span>
+                <p>Minutos</p>
+            </div>
+            <div class="love-counter-item">
+                <span id="seconds">0</span>
+                <p>Segundos</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="love-message">
+        <p>Eres lo mejor que me ha pasado en la vida. Cada momento contigo es un tesoro que guardo en mi corazón. Nuestro amor es una aventura maravillosa que quiero vivir cada día. Te amo con todo mi ser, hoy y siempre.</p>
+    </div>
+</div>
+
+<script>
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('floating-heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+    document.getElementById('floating-hearts').appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createFloatingHeart, 300);
+
+document.addEventListener('mousemove', (e) => {
+    const hearts = document.querySelectorAll('.floating-heart');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    hearts.forEach(heart => {
+        const rect = heart.getBoundingClientRect();
+        const heartCenterX = rect.left + rect.width / 2;
+        const heartCenterY = rect.top + rect.height / 2;
+        
+        const angleX = (heartCenterX - e.clientX) * 0.0001;
+        const angleY = (heartCenterY - e.clientY) * 0.0001;
+        
+        heart.style.transform = `rotateX(${angleY}rad) rotateY(${-angleX}rad)`;
+    });
+});
+
+// Love counter
+const startDate = new Date('2023-11-04T00:00:00');
+
+function updateLoveCounter() {
+    const now = new Date();
+    const difference = now - startDate;
+
+    const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
+    const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+    const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById('years').textContent = years;
+    document.getElementById('months').textContent = months;
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+}
+
+updateLoveCounter();
+setInterval(updateLoveCounter, 1000);
+</script>
+</body></html>
